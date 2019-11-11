@@ -1,14 +1,16 @@
 const express = require('express');
 const router=express.Router();
 
-const VideojuegoController= require("../core/controllers/Videojuegos.controller");
+const UsuarioController= require("../core/controllers/Usuario.controller");
 
-//router.get("/getVideojuego", VideojuegoController.getVideojuego);
+router.get("/getUsuario", UsuarioController.get);
 
-//router.get("/getVideojuegoID/:id", VideojuegoController.getVideojuegoID);
+router.get("/getUsuarioID/:id", UsuarioController.getId);
 
-router.post("/videojuego", VideojuegoController.save);
+router.post("/usuario", UsuarioController.save);
 
-//router.put("/updateVideojuego/:id", VideojuegoController.putVideojuego);
+router.put("/updateUsuario/:id", UsuarioController.put);
+
+router.delete("/deleteUsuario/:id", UsuarioController.delete);
 
 module.exports = router;
